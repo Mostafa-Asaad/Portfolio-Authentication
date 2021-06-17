@@ -9,9 +9,6 @@ const ContactSchema = new Schema({
     FirstName: String,
     EmailAddress: String,
     ContactNumber: String,
-    Colour: String,
-    Size: String,
-    Price: Number
 }, {
     collection: "Contacts"
 });
