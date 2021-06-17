@@ -2,10 +2,8 @@ import express from 'express';
 const router = express.Router();
 export default router;
 
-
 // create an index controller instance
 import { DisplayAboutPage, DisplayContactPage, DisplayHomePage, DisplayProjectsPage, DisplayServicesPage } from '../Controllers/index';
-
 /* GET home page. */
 router.get('/', DisplayHomePage);
 

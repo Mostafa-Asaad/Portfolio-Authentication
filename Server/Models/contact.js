@@ -10,8 +10,8 @@ const ContactSchema = new Schema({
     EmailAddress: String,
     ContactNumber: String,
 }, {
-    collection: "Contacts"
+    collection: "Contact"
 });
-const Model = mongoose_1.default.model("Contacts", ContactSchema);
+const Model = mongoose_1.default.model("Contact", ContactSchema);
 exports.default = Model;
 //# sourceMappingURL=contact.js.map

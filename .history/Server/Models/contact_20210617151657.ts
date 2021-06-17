@@ -9,8 +9,8 @@ const ContactSchema = new Schema
     ContactNumber: String,
 }, 
 {
-    collection: "Contact"
+    collection: "Contacts"
 });
 
-const Model = mongoose.model("Contact", ContactSchema);
+const Model = mongoose.model("Contacts", ContactSchema);
 export default Model;
