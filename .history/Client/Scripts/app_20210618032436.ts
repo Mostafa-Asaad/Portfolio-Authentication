@@ -1,0 +1,26 @@
+//IIFE -- Immediately Invoked Function Expression
+"use strict";
+
+(function(){
+
+    // get confirmation to delete item
+    function confirmDelete()
+    {
+      // confirm deletion
+      $("a.delete").on("click", function(event){
+        if(!confirm("Are you sure?"))
+        {
+          event.preventDefault();
+          location.href = '/contact-list';
+        }       
+      });
+    }
+
+    function Start():void
+    {
+        console.log("App Started");
+    }
+
+    window.addEventListener("load", Start);
+
+})();
