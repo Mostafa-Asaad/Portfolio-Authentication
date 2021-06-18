@@ -18,7 +18,7 @@ export function DisplayContactListPage(req: Request, res: Response, next: NextFu
     }
     console.log(contactCollection);
     //Render the clothing-list content partial page
-    res.render('index', {title: 'Contact List', page: 'contact-list', contact: contactCollection, displayName: UserDisplayName(req)});
+    res.render('index', {title: 'Contact List', page: 'contact-list', contact: contactCollection});
 });
 }
 
@@ -37,7 +37,7 @@ export function DisplayEditPage(req: Request, res:Response, next: NextFunction):
          }
 
          // show the edit view
-         res.render('index', {title:'Edit', page: 'update', contact: contactItemToEdit, displayName: UserDisplayName(req)});
+         res.render('index', {title:'Edit', page: 'update', contact: contactItemToEdit});
      });
 }
 
@@ -45,7 +45,7 @@ export function DisplayEditPage(req: Request, res:Response, next: NextFunction):
 export function DisplayAddPage(req: Request, res: Response, next: NextFunction): void
 {
     // show the edit view
-    res.render('index', { title: 'Add', page: 'add', contact: '' , displayName: UserDisplayName(req)});
+    res.render('index', { title: 'Add', page: 'add', contact: '' });
 }
 
 
