@@ -4,7 +4,7 @@ const Schema = mongoose.Schema; // alias for the Mangoose Schema
 
 const ContactSchema = new Schema 
 ({
-    FullName: String,
+    FirstName: String,
     EmailAddress: String,
     ContactNumber: String,
 }, 

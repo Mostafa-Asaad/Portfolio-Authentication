@@ -9,7 +9,6 @@ export function DisplayContactListPage(req: Request, res: Response, next: NextFu
     {
         return console.error(err);
     }
-    console.log(contactCollection);
     //Render the clothing-list content partial page
     res.render('index', {title: 'Contact List', page: 'contact-list', contact: contactCollection});
 });

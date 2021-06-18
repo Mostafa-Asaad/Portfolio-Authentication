@@ -4,12 +4,12 @@ import Contact from "../Models/contact";
 
 export function DisplayContactListPage(req: Request, res: Response, next: NextFunction): void
 {   
-    Contact.find(function(err, contactCollection){
+    Contact.find(function(err, contact){
     if(err)
     {
         return console.error(err);
     }
-    console.log(contactCollection);
+    console.log(contact);
     //Render the clothing-list content partial page
     res.render('index', {title: 'Contact List', page: 'contact-list', contact: contactCollection});
 });

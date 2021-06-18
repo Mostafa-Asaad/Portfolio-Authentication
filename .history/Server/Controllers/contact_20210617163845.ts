@@ -18,17 +18,4 @@ export function DisplayContactListPage(req: Request, res: Response, next: NextFu
 export function DisplayEditPage(req: Request, res:Response, next: NextFunction):void
 {
     let id = req.params.id;
-
-    // pass the id to the db
-     Contact.findById(id,{},{}, (err, contactItemToEdit) =>
-     {
-         if(err)
-         {
-             console.error(err);
-             res.end(err);
-         }
-
-         // show the edit view
-         res.render('index', {title:'Edit', page: 'edit', item: contactItemToEdit});
-     })
 }

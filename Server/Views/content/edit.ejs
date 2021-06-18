@@ -1,0 +1,27 @@
+<div class="row justify-content-lg-center g-3">
+    <h1><%= title %> Contact </h1>
+
+    <form method = "POST" class="col-lg-6 col-md-10 col-sm-10">
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="name">Name</span>
+            <input id ="name" type="text" class="form-control" placeholder="Username" aria-label="Name" aria-describedby="Item Name"
+            name="name" value="<%=item.FirstName %>" required>
+          </div>  
+          
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="name">Email Address</span>
+            <input id ="EmailAddress" type="text" class="form-control" placeholder="Email Address" aria-label="Email address" aria-describedby="Item Email Address"
+            name="email address" value="<%=item.EmailAddress %>" required>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="name">Contact number</span>
+            <input id ="EmailAddress" type="text" class="form-control" placeholder="Email Address" aria-label="Contact Number" aria-describedby="Item Contact Number"
+            name="email address" value="<%=item.ContactNumber %>" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="editButton"><i class="fas fa-edit fa-lg"></i> Edit</button>
+
+    </form>
+</div>
