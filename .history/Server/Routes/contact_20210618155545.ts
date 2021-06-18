@@ -12,17 +12,17 @@ import { AuthGuard } from '../Util/index';
 router.get('/', DisplayContactListPage);
 
 /* GET - display /clothing-list/add page. */
-router.get('/add', AuthGuard, DisplayAddPage);
+router.get('/add', DisplayAddPage);
 
 // display edit/:id -page list with /contact-list/edit:id
 
-router.get('/edit/:id', AuthGuard, DisplayEditPage);
+router.get('/edit/:id', DisplayEditPage);
 
 /* POST - process /contact-list/add page */
-router.post('/add', AuthGuard, ProcessAddPage);
+router.post('/add', ProcessAddPage);
 
 /* POST - process /contact-list/edit/:id page */
-router.post('/edit/:id', AuthGuard, ProcessEditPage);
+router.post('/edit/:id', ProcessEditPage);
 
 /* GET - process /contact-list/delete/:id */
-router.get('/delete/:id', AuthGuard, ProcessDeletePage);
+router.get('/delete/:id', ProcessDeletePage);
