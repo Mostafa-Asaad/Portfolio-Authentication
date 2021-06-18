@@ -21,10 +21,7 @@ import cors from 'cors';
 
 // authentication objects
 let localStrategy = passportLocal.Strategy; // alias
-import User from '../Models/user';
-
-// module for auth messaging and error management
-import flash from 'connect-flash';
+//import User from '../Models/user';
 
 // attach router files
 import indexRouter from '../Routes/index';

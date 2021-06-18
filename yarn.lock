@@ -114,12 +114,20 @@
   resolved "https://registry.yarnpkg.com/@types/mime/-/mime-1.3.2.tgz#93e25bf9ee75fe0fd80b594bc4feb0e862111b5a"
   integrity sha512-YATxVxgRqNH6nHEIsvg6k2Boc1JHI9ZbH5iWFFv/MTkchz3b1ieGDa5T0a9RznNdI0KhVbdbWSN+KWWrQZRxTw==
 
-"@types/mongodb@^3.5.27":
+"@types/mongodb@*", "@types/mongodb@^3.5.27":
   version "3.6.18"
   resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.6.18.tgz#7524c462fc7e3b67892afda8211cd045edee65eb"
   integrity sha512-JSVFt9p0rTfZ4EgzXmVHUB3ue00xe3CRbQho8nXfImzEDDM4O7I3po1bwbWl/EIbLENxUreZxqLOc8lvcnLVPA==
   dependencies:
     "@types/bson" "*"
+    "@types/node" "*"
+
+"@types/mongoose@4.*":
+  version "4.7.56"
+  resolved "https://registry.yarnpkg.com/@types/mongoose/-/mongoose-4.7.56.tgz#6bfef3a2ab70264a9ddaf1f00228e496484a3c8a"
+  integrity sha512-c4bQmM/WUMQvOpEJFJbNjwLU72bzFOtKJ+4HtqdA+wtMhWpwIBoKdL7KsNt7BRjelK0dcSrgymvz/miQuPjikw==
+  dependencies:
+    "@types/mongodb" "*"
     "@types/node" "*"
 
 "@types/morgan@^1.9.2":
@@ -134,11 +142,12 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-15.6.1.tgz#32d43390d5c62c5b6ec486a9bc9c59544de39a08"
   integrity sha512-7EIraBEyRHEe7CH+Fm1XvgqU6uwZN8Q7jppJGcqjROMT29qhAuuOxYB1uEY5UMYQKEmA5D+5tBnhdaPXSsLONA==
 
-"@types/passport-local-mongoose@4.0.13":
-  version "4.0.13"
-  resolved "https://registry.yarnpkg.com/@types/passport-local-mongoose/-/passport-local-mongoose-4.0.13.tgz#0edc3aedcc82a70b7e461efc2dc85f42ccb80aa3"
-  integrity sha512-tjVfcyFXO+EIzjTg6DHm+Wq9LwftqDv0kQ/IlLqFHBtZ6gKMy5pLKdr4g62VGEJsgPX8F9UGb9inDREQ2tOpEw==
+"@types/passport-local-mongoose@^4.0.13":
+  version "4.0.14"
+  resolved "https://registry.yarnpkg.com/@types/passport-local-mongoose/-/passport-local-mongoose-4.0.14.tgz#11de85b01f6998e4ebc1bcc7500128f7e4d62a41"
+  integrity sha512-EvaVpWw57tyOH3eJsZi+3YWv/8lMM79zd+3Wydak5BXBBoUSQTNvGQHt+P6vYR/k0z94TuezskhwelzO7no/AA==
   dependencies:
+    "@types/mongoose" "4.*"
     "@types/passport-local" "*"
 
 "@types/passport-local@*", "@types/passport-local@^1.0.33":
