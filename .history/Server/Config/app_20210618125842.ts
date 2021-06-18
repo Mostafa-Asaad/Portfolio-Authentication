@@ -1,9 +1,15 @@
+/* Name: Mostafa Asaad
+ID: 301173762
+COMP229 - Web Application Development
+Assignment 2 
+18/June/2021*/
+
 import createError from 'http-errors';
 import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
-import mongoose, { mongo } from 'mongoose';
+import mongoose from 'mongoose';
 
 // modules for authentication
 import session from 'express-session';
@@ -20,30 +26,30 @@ import User from '../Models/user';
 // module for auth messaging and error management
 import flash from 'connect-flash';
 
+
 // attach router files
 import indexRouter from '../Routes/index';
 import contactRouter from '../Routes/contact';
 
-// Express Web App Configuration
+
+// Express web App configuration
+
 const app = express();
 export default app; // exports app as the default Object for this module
 
-// DB Configuration
-import * as DBConfig from './db';
+// DB configuration
+
+import * as DBConfig from "./db";
 mongoose.connect(DBConfig.LocalURI, {useNewUrlParser: true, useUnifiedTopology: true});
-
-const db = mongoose.connection; // alias for the mongoose connection
-db.on("error", function()
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error'));
+db.once('open', function()
 {
-  console.error("connection error");
-});
-
-db.once("open", function()
-{
-  console.log(`Connected to MongoDB at: ${DBConfig.HostName}`);
+  console.log(`connected to MongoDB at: ${DBConfig.HostName}`);
 });
 
 // view engine setup
+
 app.set('views', path.join(__dirname, '../Views'));
 app.set('view engine', 'ejs');
 
@@ -58,11 +64,11 @@ app.use(express.static(path.join(__dirname, '../../node_modules')));
 app.use(cors());
 
 // setup express session
-app.use(session({
-  secret: DBConfig.Secret,
-  saveUninitialized: false,
-  resave: false
-}));
+// app.use(session({
+//   secret: DBConfig.Secret,
+//   saveUninitialized: false,
+//   resave: false
+// }));
 
 // initialize flash
 app.use(flash());
@@ -78,9 +84,9 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// create routing through event handling
+// Create routing through event handling
 app.use('/', indexRouter);
-app.use('/contact-list', contactRouter);
+app.use('/contact-list', contactRouter); // defines a new area of our website called contact-list
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 

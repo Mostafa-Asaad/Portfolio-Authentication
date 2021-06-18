@@ -24,7 +24,7 @@ const UserSchema = new Schema
 
 UserSchema.plugin(passportLocalMongoose);
 
-const Model = mongoose.model("User", UserSchema as PassportLocalSchema);
+const Model = mongoose.model("Contact", UserSchema as PassportLocalSchema);
 
 declare global
 {
