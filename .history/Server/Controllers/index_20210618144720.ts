@@ -1,38 +1,19 @@
 import express, { Request, Response, NextFunction } from 'express';
 
-import passport from 'passport';
-
-// create an instance of the User model
-import User from '../Models/user';
-
-// import Util functions
-import { UserDisplayName } from '../Util';
-
-// export the display of home page
-
 export function DisplayHomePage(req: Request, res: Response, next: NextFunction) : void
 {
     res.render('index', { title: 'Home', page: 'home' });
 }
-
-
-// export the display of about me page
 
 export function DisplayAboutPage(req: Request, res: Response, next: NextFunction) : void
 {
     res.render('index', { title: 'About Me', page: 'about'  });
 }
 
-
-// export the display of projects page
-
 export function DisplayProjectsPage(req: Request, res: Response, next: NextFunction) : void
 {
     res.render('index', { title: 'My Projects', page: 'projects'  });
 }
-
-
-// export the display of services page
 
 export function DisplayServicesPage(req: Request, res: Response, next: NextFunction) : void
 {
@@ -40,15 +21,10 @@ export function DisplayServicesPage(req: Request, res: Response, next: NextFunct
 }
 
 
-// export the display of contact me page
-
 export function DisplayContactPage(req: Request, res: Response, next: NextFunction) : void
 {
     res.render('index', { title: 'Contact me', page: 'contact'  });
 }
-
-
-// export the display of login page
 
 export function DisplayLoginPage(req: Request, res: Response, next: NextFunction): void
 {
@@ -59,22 +35,6 @@ export function DisplayLoginPage(req: Request, res: Response, next: NextFunction
 
     return res.redirect('/contact-list');
 }
-
-
-// export the display of register page
-
-export function DisplayRegisterPage(req: Request, res: Response, next: NextFunction): void
-{
-    if(!req.user)
-    {
-        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: UserDisplayName(req)  });
-    }
-
-    return res.redirect('/contact-list');
-}
-
-
-// export the process of login page
 
 export function ProcessLoginPage(req: Request, res: Response, next: NextFunction): void
 {
@@ -108,7 +68,15 @@ export function ProcessLoginPage(req: Request, res: Response, next: NextFunction
     })(req, res, next);
 }
 
-// export the process of register page
+export function DisplayRegisterPage(req: Request, res: Response, next: NextFunction): void
+{
+    if(!req.user)
+    {
+        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: UserDisplayName(req)  });
+    }
+
+    return res.redirect('/contact-list');
+}
 
 export function ProcessRegisterPage(req: Request, res: Response, next: NextFunction): void
 {
@@ -140,10 +108,6 @@ export function ProcessRegisterPage(req: Request, res: Response, next: NextFunct
         });
     });
 }
-
-
-// export the process of logout page
-
 
 export function ProcessLogoutPage(req: Request, res: Response, next: NextFunction): void
 {

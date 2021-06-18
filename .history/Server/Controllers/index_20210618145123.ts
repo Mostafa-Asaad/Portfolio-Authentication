@@ -47,9 +47,6 @@ export function DisplayContactPage(req: Request, res: Response, next: NextFuncti
     res.render('index', { title: 'Contact me', page: 'contact'  });
 }
 
-
-// export the display of login page
-
 export function DisplayLoginPage(req: Request, res: Response, next: NextFunction): void
 {
     if(!req.user)
@@ -59,22 +56,6 @@ export function DisplayLoginPage(req: Request, res: Response, next: NextFunction
 
     return res.redirect('/contact-list');
 }
-
-
-// export the display of register page
-
-export function DisplayRegisterPage(req: Request, res: Response, next: NextFunction): void
-{
-    if(!req.user)
-    {
-        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: UserDisplayName(req)  });
-    }
-
-    return res.redirect('/contact-list');
-}
-
-
-// export the process of login page
 
 export function ProcessLoginPage(req: Request, res: Response, next: NextFunction): void
 {
@@ -108,7 +89,15 @@ export function ProcessLoginPage(req: Request, res: Response, next: NextFunction
     })(req, res, next);
 }
 
-// export the process of register page
+export function DisplayRegisterPage(req: Request, res: Response, next: NextFunction): void
+{
+    if(!req.user)
+    {
+        return res.render('index', { title: 'Register', page: 'register', messages: req.flash('registerMessage'), displayName: UserDisplayName(req)  });
+    }
+
+    return res.redirect('/contact-list');
+}
 
 export function ProcessRegisterPage(req: Request, res: Response, next: NextFunction): void
 {
@@ -140,10 +129,6 @@ export function ProcessRegisterPage(req: Request, res: Response, next: NextFunct
         });
     });
 }
-
-
-// export the process of logout page
-
 
 export function ProcessLogoutPage(req: Request, res: Response, next: NextFunction): void
 {

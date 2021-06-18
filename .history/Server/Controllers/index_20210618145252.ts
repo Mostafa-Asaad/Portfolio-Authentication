@@ -141,10 +141,6 @@ export function ProcessRegisterPage(req: Request, res: Response, next: NextFunct
     });
 }
 
-
-// export the process of logout page
-
-
 export function ProcessLogoutPage(req: Request, res: Response, next: NextFunction): void
 {
     req.logout();
