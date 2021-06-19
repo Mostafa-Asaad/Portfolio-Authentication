@@ -1,20 +1,17 @@
 <div class="row justify-content-lg-center g-3">
 
-<!-- tittle  -->
-
     <form method = "POST" class="col-lg-6 col-md-10 col-sm-10">
-      <h3 style="color:white; margin-top:20px;"> Create a Business Contact </h3>
+      <h3 style="color:white; margin-top:20px;"> Update Business Contact </h3>
+
+      <!-- first name -->
+
         <div class="input-group mb-3" style= "margin-top:75px;">
-
-        <!-- First Name  -->
-
-
             <span class="input-group-text" id="inputGroup-name">First Name</span>
             <input type="text" class="form-control" placeholder="Enter First Name" aria-label="First Name" aria-describedby="First Name"
             name="FirstName" value="<%= contact.FirstName %>" required>
         </div>
 
-        <!-- LAst Name  -->
+        <!-- last name -->
 
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-name">Last Name</span>
@@ -22,7 +19,7 @@
             name="LastName" value="<%= contact.LastName %>" required>
         </div>
 
-        <!-- email address  -->
+        <!-- email address -->
 
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-name">Email Address</span>
@@ -30,7 +27,7 @@
             name="EmailAddress" value="<%= contact.EmailAddress %>" required>
         </div>
 
-        <!-- Contact number  -->
+        <!-- contact number -->
 
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-name">Contact Number</span>
@@ -38,7 +35,7 @@
             name="ContactNumber" value="<%= contact.ContactNumber %>" required>
         </div>
 
-        <!-- company Name  -->
+        <!-- company name -->
 
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-name">Company</span>
@@ -46,9 +43,10 @@
             name="Company" value="<%= contact.Company %>" required>
         </div>
 
-        <!-- submit and cancel buttoms  -->
+        <!-- update + delete + cancel buttons -->
 
-          <button type="submit" class="btn btn-primary" id="editButton"><i class="fas fa-edit fa-lg"></i> Create</button>
+          <button type="submit" class="btn btn-primary" id="editButton" style= "margin-right:5px;"><i class="fas fa-edit fa-lg"></i> Update</button>
+          <a href="/contact-list/delete/<%= contact._id %>" style= "margin-right:10px;"class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
           <a href="/contact-list" id="cancelButton" type="button" class="btn btn-warning"><i class="fas fa-undo"></i> Cancel</a>
     </form>
 </div>

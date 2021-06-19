@@ -13,8 +13,6 @@ import express, { Request, Response, NextFunction } from 'express';
 
 import * as DBConfig from '../Config/db';
 
-// exporting use display name
-
 export function UserDisplayName(req: Request): string
 {
     if(req.user)
@@ -22,13 +20,8 @@ export function UserDisplayName(req: Request): string
         let user = req.user as UserDocument;
         return user.displayName.toString();
     }
-
-    // in case no user
-
     return '';
 }
-
-// exporting AuthGuard
 
 export function AuthGuard(req: Request, res: Response, next: NextFunction): void
 {

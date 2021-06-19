@@ -28,7 +28,7 @@ export function UserDisplayName(req: Request): string
     return '';
 }
 
-// exporting AuthGuard
+// export authGuard
 
 export function AuthGuard(req: Request, res: Response, next: NextFunction): void
 {
